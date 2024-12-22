@@ -1,0 +1,63 @@
+@use "src/Styles/mixins.scss" as m;
+
+.footer {
+  background: #141414;
+  color: #aaaaaa;
+  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@include m.small {
+  .footer {
+    padding: 7rem 0;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav .navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 374px;
+}
+
+@include m.small {
+  .nav .navLinks {
+    width: fit-content;
+    flex-wrap: wrap;
+  }
+}
+
+@include m.very-small {
+  .nav .navLinks {
+    gap: 9px;
+  }
+}
+
+.nav .navLinks li a {
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+@include m.small {
+  .nav .navLinks li a {
+    display: block;
+    padding: .8rem;
+  }
+}
+
+@include m.very-small {
+  .nav .navLinks li a {
+    padding: 0;
+  }
+}

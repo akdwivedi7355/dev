@@ -1,0 +1,44 @@
+@use "src/Styles/mixins.scss" as m;
+
+.socialMedia {
+  --media-box-size: 50px;
+  --gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-top: 60px;
+}
+
+@include m.small {
+  .socialMedia {
+    min-width: calc((4 * var(--media-box-size)) + (3 * var(--gap)));
+    margin-top: 30px;
+    justify-content: center;
+  }
+}
+
+@include m.very-small {
+  .socialMedia {
+    justify-content: flex-start;
+    margin: 30px auto 0;
+  }
+}
+
+.socialMedia li a {
+  width: var(--media-box-size);
+  height: var(--media-box-size);
+  @include m.center-x-y;
+  background: #333;
+  color: rgba(255, 255, 255, .8);
+  transition: background-color .3s ease-in-out;
+}
+
+.socialMedia li a :where(svg, img) {
+  width: 22px;
+  height: 22px;
+}
+
+.socialMedia li a svg {
+  fill: #fff;
+  transition: fill .3s;
+}

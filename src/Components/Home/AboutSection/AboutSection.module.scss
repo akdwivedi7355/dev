@@ -1,0 +1,19 @@
+@use "src/Styles/mixins.scss" as m;
+
+.aboutSection {
+  // background-color: #fcfcfc;
+  padding: 12rem 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8rem;
+}
+
+@include m.large {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 6rem;
+  }
+}

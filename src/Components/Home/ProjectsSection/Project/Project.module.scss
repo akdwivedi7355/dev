@@ -1,0 +1,86 @@
+@use "src/Styles/mixins.scss" as m;
+
+.project {
+  display: grid;
+  grid-template-columns: 45%;
+  grid-gap: 3rem;
+}
+
+@include m.large {
+  .project {
+    grid-template-columns: 60%;
+  }
+}
+
+@include m.medium {
+  .project {
+    grid-template-columns: 100%;
+  }
+}
+
+.project.right {
+  justify-content: flex-end;
+}
+
+.projectView {
+  box-shadow: rgba(0, 0, 0, .24) 0 3px 8px;
+  margin: 0 0 0 auto;
+}
+
+.projectView img {
+  width: 100%;
+  display: block;
+}
+
+.project>a {
+  font-size: 3.4rem;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  color: #000;
+  font-weight: 400;
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+@include m.small {
+  .project>a {
+    margin: 2rem 0 0 0;
+  }
+}
+
+.project .description {
+  font-size: 1.9rem;
+  color: #f4ebeb;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+@include m.small {
+  .project .description {
+    margin-bottom: 3.7rem;
+    
+  }
+}
+
+.project .description>span {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.project .buttons {
+  width: fit-content;
+  display: flex;
+  gap: 24px;
+}
+
+@include m.very-small {
+  .project .buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+}

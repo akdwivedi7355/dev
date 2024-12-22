@@ -1,0 +1,39 @@
+@use "src/Styles/mixins.scss" as m;
+
+.copyrights {
+  width: 270px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+@include m.small {
+  .copyrights {
+    margin-top: 30px;
+  }
+}
+
+@include m.very-small {
+  .copyrights {
+    width: 100%;
+  }
+}
+
+.copyrights::before {
+  content: '©';
+  font-size: 2rem;
+  font-weight: light;
+  padding-right: 2px;
+  user-select: all;
+}
+
+.copyrights a {
+  color: #c9c9c9;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color .3s;
+
+  &:hover {
+    color: #fff;
+  }
+}

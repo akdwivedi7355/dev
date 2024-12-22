@@ -1,0 +1,121 @@
+@use "src/Styles/mixins.scss" as m;
+
+.themeSelector {
+  border: none;
+  outline: none;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  @include m.center-x-y;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 10px 100px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+}
+
+@include m.small {
+  .themeSelector {
+    top: 100%;
+    translate: 0 -100%;
+  }
+}
+
+.themeSelector>img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  background: #fff;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, .1);
+  border-radius: 8px 0 0 8px;
+  z-index: 11;
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.menu .item {
+  position: relative;
+  padding: 10px 14px;
+
+  &:hover,
+  &:has(input:focus) {
+    background-color: rgba(var(--theme-color), .05);
+  }
+}
+
+.menu .item input {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu .item {
+  outline: none;
+  border: none;
+  font-weight: bold;
+  user-select: none;
+  font-size: 1.3rem;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  color: rgba(var(--text-color));
+}
+
+.menu .item:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.menu .item img {
+  width: 26px;
+  height: 26px;
+}
+
+.menu .closeIcon {
+  outline: none;
+  border: none;
+  position: absolute;
+  z-index: 10;
+  left: -8px;
+  top: -7px;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.558);
+  border-radius: 50%;
+  padding: 2px;
+
+  &:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+}
+
+.menu .closeIcon>svg {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  fill: #fff;
+  pointer-events: none;
+}

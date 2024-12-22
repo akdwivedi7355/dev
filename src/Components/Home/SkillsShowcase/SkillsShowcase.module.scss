@@ -1,0 +1,98 @@
+@use "src/Styles/mixins.scss" as m;
+
+.skillsShowcase {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f4f8, #d9e3f0);
+
+  .slick-list {
+    margin: 0 -1rem; // Adjust spacing for the slides
+  }
+
+  .slick-slide {
+    padding: 1rem; // Space between slides
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skillItem {
+    width: 100%;
+    max-width: 120px;
+    height: 120px;
+    background: #ffffff;
+    border: 3px solid #000;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; // Ensure proper positioning for inner elements
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute; // Position the circle absolutely within the parent
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); // Center the circle perfectly
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background: #f0f0f0;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #e6e6e6;
+    }
+
+    img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+      filter: grayscale(1);
+      transition: filter 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        filter: grayscale(0);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include m.large {
+    .skillItem {
+      max-width: 100px;
+      height: 100px;
+    }
+  }
+
+  @include m.medium {
+    .skillItem {
+      max-width: 90px;
+      height: 90px;
+    }
+  }
+
+  @include m.small {
+    .skillItem {
+      max-width: 80px;
+      height: 80px;
+    }
+  }
+
+  @include m.very-small {
+    .skillItem {
+      max-width: 70px;
+      height: 70px;
+    }
+  }
+}

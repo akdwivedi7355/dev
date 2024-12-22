@@ -1,0 +1,52 @@
+@use "./mixins" as m;
+@use "./variables" as v;
+
+.container {
+  width: 79%;
+  margin: 0 auto;
+}
+
+@include m.large {
+  .container {
+    width: 85%;
+  }
+}
+
+@include m.medium {
+  .container {
+    width: 90%;
+  }
+}
+
+@include m.small {
+  .container {
+    width: 92%;
+  }
+}
+
+@each $skill, $color in v.$my-skills-colors {
+  .#{$skill}-color {
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:hover {
+      background-color: #{$color} !important;
+      color: #fff !important;
+    }
+  }
+}
+
+@each $media, $color in v.$social-media-color {
+  .#{$media}:hover {
+    background-color: #{$color} !important;
+
+    @if $media=="github" or $media=="codepen" {
+      & svg {
+        fill: #000 !important;
+      }
+    }
+  }
+}
+
+.codewars img {
+  filter: brightness(0) invert(1);
+}

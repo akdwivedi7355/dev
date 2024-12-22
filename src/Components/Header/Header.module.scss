@@ -1,0 +1,57 @@
+@use "src/Styles/mixins.scss" as m;
+
+.header {
+  padding: 2.5rem;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  box-shadow: 0 10px 100px -5px #eee;
+  z-index: 1000;
+  background-image: linear-gradient(to right, #38393a, #2b2e32, #393a3b); /* Example gradient */
+  color: white; /* Ensures the text is visible */
+}
+
+
+.header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--website-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@include m.small {
+  .main-header {
+    padding: 2.3rem 1.5rem;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.imgHolder {
+  margin-right: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 10rem;
+  background: rgba(var(--theme-color), 1);
+}
+
+@include m.small {
+  .imgHolder {
+    margin-right: 1rem;
+  }
+}
+
+.logoText {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}

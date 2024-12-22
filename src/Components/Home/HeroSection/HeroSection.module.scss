@@ -1,0 +1,66 @@
+@use "src/Styles/mixins.scss" as m;
+
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 80rem;
+  max-height: 120rem;
+  gap: 2rem;
+
+  @include m.small {
+    flex-direction: column;
+    height: unset;
+    min-height: unset;
+    max-height: unset;
+  }
+}
+
+.content {
+  flex: 1;
+  margin: auto;
+  animation: downToUp 0.8s;
+
+  @include m.small {
+    margin: 0 auto;
+    padding: 15rem 0 10rem 0;
+  }
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .profileImage {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.heroSection .buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @include m.very-small {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@keyframes downToUp {
+  0% {
+    opacity: 0;
+    translate: 0 50px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0;
+  }
+}

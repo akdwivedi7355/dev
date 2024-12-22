@@ -1,0 +1,49 @@
+@use "src/Styles/mixins.scss" as m;
+
+.name {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+}
+
+@include m.small {
+  .name {
+    font-size: 1.8rem;
+  }
+}
+
+.description {
+  margin-bottom: 5rem;
+  font-size: 4.5rem;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+@include m.medium {
+  .description {
+    font-size: 3.5rem;
+  }
+}
+
+@include m.small {
+  .description {
+    font-size: 2.5rem;
+  }
+}
+
+@include m.very-small {
+  .description {
+    text-wrap: balance;
+    font-size: 1.8rem;
+  }
+}
+
+@include m.small {
+  .description {
+    margin-bottom: 4.5rem;
+  }
+}
